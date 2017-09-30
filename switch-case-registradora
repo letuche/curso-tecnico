@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+int main (){
+
+ int codprod, nperecivel=0, perecivel=0, vestuario=0, higiene=0, limpeza=0;
+  while (codprod != 0)
+  {
+      printf("\n Informe codigo do produto: ");
+      scanf("%d", &codprod);
+
+      if ((codprod > 0) && (codprod < 16))
+      {
+          switch (codprod)
+          {
+              case 1:{
+                  printf("\n Alimento nao-perecivel");
+                  printf("\n");
+                  nperecivel++;
+                  break;
+              }
+
+              case 2 ... 4:
+                  printf("\n Alimento perecivel");
+                  printf("\n");
+                  perecivel++;
+                  break;
+
+              case 5 ... 6:
+                  printf("\n Item de vestuario");
+                  printf("\n");
+                  vestuario++;
+                  break;
+
+              case 7:{
+                  printf("\n Item de higiene pessoal");
+                  printf("\n");
+                  higiene++;
+                  break;  
+              }
+
+              case 8 ... 15:
+                  printf("\n Produto de limpeza");
+                  printf("\n");
+                  limpeza++;
+                  break;
+
+              default: {
+              }
+          }
+      }
+
+      else if (codprod!=0)
+      {
+              printf("\n Codigo invalido.");  
+      }
+  }
+  printf("\n Alimentos nao pereciveis: %d", nperecivel);
+  printf("\n Alimentos pereciveis: %d", perecivel);
+  printf("\n Itens de vestuario: %d", vestuario);
+  printf("\n Produtos de higiene pessoal: %d", higiene);
+  printf("\n Produtos de limpeza: %d", limpeza);
+
+}
